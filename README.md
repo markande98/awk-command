@@ -210,6 +210,92 @@ $ awk ' { if(length($0) > max) max = length($0) } END { print max }' employee.tx
 
 ---
 
+# BUILT IN VARIABLES
+
+<p>NR - To count the number of records in a file</p>
+
+```
+$ awk ' END {print "Number of records in a file is: ", NR}' employee.txt
+```
+
+<p>Output:</p>
+
+```
+Number of records in a file is:  8
+```
+
+---
+
+<p>To display the line number using NR variable</p>
+
+```
+$ awk '{print NR,$0}' employee.txt 
+```
+
+<p>Output:</p>
+
+```
+1 ajay manager account 45000
+2 sunil clerk account 25000
+3 varun manager sales 50000
+4 amit manager account 47000
+5 tarun peon sales 15000
+6 deepak clerk sales 23000
+7 sunil peon sales 13000
+8 satvik director purchase 80000
+```
+
+---
+
+<p>NF - To display the number of fileds </p>
+
+```
+awk '{ print "Record:",NR,"has",NF,"fields" ; }' employee.txt
+```
+
+<p>Output:</p>
+
+```
+Record: 1 has 4 fields
+Record: 2 has 4 fields
+Record: 3 has 4 fields
+Record: 4 has 4 fields
+Record: 5 has 4 fields
+Record: 6 has 4 fields
+Record: 7 has 4 fields
+Record: 8 has 4 fields
+```
+
+---
+
+<p>To display the last field using NF variable</p>
+
+```
+$ awk ' {print $NF} ' employee.txt
+```
+
+<p>Output:</p>
+
+```
+45000
+25000
+50000
+47000
+15000
+23000
+13000
+80000
+```
+
+---
+
+# REFERENCES
+
+* https://www.geeksforgeeks.org/awk-command-unixlinux-examples/
+
+* https://www.journaldev.com/24871/awk-command-linux-unix
+
+* https://www.tecmint.com/awk-built-in-variables-examples/
 
 
 
